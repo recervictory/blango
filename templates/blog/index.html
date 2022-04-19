@@ -3,51 +3,11 @@
 {% extends "base.html" %}
   {% block content %}
 <!-- Code here : Inside the block -->
-<!-- navbar -->
-  <nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<!-- navbar -->
-
-  <!--  Modal: 
-    To set it up, you’ll need something to trigger the modal to open, like a <button>. Set its data-bs-toggle attribute to “modal” and data-bs-target to a CSS selector for the modal to open (for example #example-modal will open the modal with ID example-modal).
-  -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#example-modal">
-  Open Modal
-</button>
-<!-- -->
-<div class="modal" id="example-modal" tabindex="-1" aria-labelledby="example-modal-label" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="example-modal-label">Modal Title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Modal Body
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
+<div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-6 bg-primary">Column 1</div>
+    <div class="col-xs-12 col-sm-2 col-md-2 bg-danger">Column 2</div>
+    <div class="col bg-success">Column 3</div>
 </div>
+ 
 <!-- Code here : Inside the block -->
   {% endblock %}
