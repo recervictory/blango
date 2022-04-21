@@ -6,9 +6,11 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blango.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blango.settings') # settings file location
+    os.environ.setdefault("DJANGO_CONFIGURATION", "Dev") # specify which configuration class to use e.g class Dev
     try:
-        from django.core.management import execute_from_command_line
+        ## from django.core.management import execute_from_command_line
+        from configurations.management import execute_from_command_line
     except ImportError as exc:
         raise ImportError(
             "Couldn't import Django. Are you sure it's installed and "

@@ -23,3 +23,8 @@ urlpatterns = [
     path("", blog.views.index),
     path("post/<slug>/", blog.views.post_detail, name="blog-post-detail"),
 ]
+
+'''{ to view tim zone on command line}
+from django.conf import settings
+print(f"Time zone: {settings.TIME_ZONE}")
+'''
