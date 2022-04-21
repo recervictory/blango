@@ -10,6 +10,11 @@ import logging # Used for logging
 
 # Create your views here.
 
+# Used for Django Debug Toolbar
+def get_ip(request):
+  from django.http import HttpResponse
+  return HttpResponse(request.META['REMOTE_ADDR'])
+
 # logger
 logger = logging.getLogger(__name__)
 
@@ -47,3 +52,4 @@ def post_detail(request, slug):
     else:
         comment_form = None
     return render(request, "blog/post-detail.html", {"post": post, "comment_form": comment_form})
+
