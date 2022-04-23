@@ -54,6 +54,7 @@ class Dev(Configuration):
         'blog',
         "debug_toolbar",
         "rest_framework",
+        "blango_auth",
     ]
 
     MIDDLEWARE = [
@@ -171,5 +172,8 @@ class Dev(Configuration):
     },
 }
 
-#### USED for Django Debug Toolbar
+    # USED for Django Debug Toolbar
     INTERNAL_IPS = ["192.168.10.93"]
+
+    # USER REGISTRATION
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
