@@ -53,3 +53,18 @@ def post_detail(request, slug):
         comment_form = None
     return render(request, "blog/post-detail.html", {"post": post, "comment_form": comment_form})
 
+### Advanced generic views ###
+
+from rest_framework import generics
+from blog.api.serializers import PostSerializer
+from blog.models import Post
+
+
+class PostList(generics.ListCreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+
+class PostDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
