@@ -53,8 +53,11 @@ class Dev(Configuration):
         'crispy_bootstrap5',
         'blog',
         "debug_toolbar",
+<<<<<<< HEAD
         "rest_framework",
         "blango_auth",
+=======
+>>>>>>> parent of 865e749... Finish Serializers
     ]
 
     MIDDLEWARE = [
