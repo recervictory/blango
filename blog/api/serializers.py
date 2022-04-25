@@ -1,9 +1,5 @@
 from rest_framework import serializers
-<<<<<<< HEAD
 from blog.models import Post, Tag, Comment
-=======
-from blog.models import Post, Tag
->>>>>>> a90382d38cd4db768ae2601129171384b40ef423
 from blango_auth.models import User
 
 class UserSerializer(serializers.ModelSerializer):
@@ -24,7 +20,6 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = "__all__"
         readonly = ["modified_at", "created_at"]
-<<<<<<< HEAD
         
 class TagField(serializers.SlugRelatedField):
     def to_internal_value(self, data):
@@ -65,10 +60,3 @@ class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tag
         fields = "__all__"
-=======
-
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ["first_name", "last_name", "email"]
->>>>>>> a90382d38cd4db768ae2601129171384b40ef423

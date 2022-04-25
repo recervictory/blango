@@ -35,26 +35,6 @@ def post_detail(request, slug):
             comment_form = CommentForm()
     else:
         comment_form = None
-<<<<<<< HEAD
     return render(
         request, "blog/post-detail.html", {"post": post, "comment_form": comment_form}
     )
-=======
-    return render(request, "blog/post-detail.html", {"post": post, "comment_form": comment_form})
-
-### Advanced generic views ###
-
-from rest_framework import generics
-from blog.api.serializers import PostSerializer
-from blog.models import Post
-
-
-class PostList(generics.ListCreateAPIView):
-    queryset = Post.objects.all()
-    serializer_class = PostSerializer
-
-
-class PostDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Post.objects.all()
-    serializer_class = PostSerializer
->>>>>>> a90382d38cd4db768ae2601129171384b40ef423

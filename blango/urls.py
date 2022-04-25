@@ -32,7 +32,6 @@ urlpatterns = [
     path("", blog.views.index),
     path("post/<slug>/", blog.views.post_detail, name="blog-post-detail"),
     path("ip/", blog.views.get_ip),
-<<<<<<< HEAD
     path("accounts/profile/", blango_auth.views.profile, name="profile"),
     path(
       "accounts/register/",
@@ -42,9 +41,6 @@ urlpatterns = [
     path("accounts/", include("django_registration.backends.activation.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
     path("accounts/", include("allauth.urls")),
-=======
-    # path("api/v1/", include("blog.api_urls")), #  api_url.py fetched
->>>>>>> a90382d38cd4db768ae2601129171384b40ef423
     path("api/v1/", include("blog.api.urls")),
 ]
 

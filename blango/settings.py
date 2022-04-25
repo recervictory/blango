@@ -13,87 +13,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 from configurations import Configuration
-<<<<<<< HEAD
 from configurations import values
 import dj_database_url
 # import logging.config
-=======
-from configurations import values # read from environment variable
-import dj_database_url # for databases urls
-
-class Dev(Configuration):
-    # Build paths inside the project like this: BASE_DIR / 'subdir'.
-    BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-    # Quick-start development settings - unsuitable for production
-    # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
-
-    # SECURITY WARNING: keep the secret key used in production secret!
-    SECRET_KEY = 'django-insecure-+sn%dpa!086+g+%44z9*^j^q-u4n!j(#wl)x9a%_1op@zz2+1-'
-
-    # SECURITY WARNING: don't run with debug turned on in production!
-    DEBUG = True
-
-    ALLOWED_HOSTS = ['*']
-    X_FRAME_OPTIONS = 'ALLOW-FROM ' + os.environ.get('CODIO_HOSTNAME') + '-8000.codio.io'
-    CSRF_COOKIE_SAMESITE = None
-    CSRF_TRUSTED_ORIGINS = [os.environ.get('CODIO_HOSTNAME') + '-8000.codio.io']
-    CSRF_COOKIE_SECURE = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SAMESITE = 'None'
-    SESSION_COOKIE_SAMESITE = 'None'
-
-
-    # Application definition
-
-    INSTALLED_APPS = [
-        'django.contrib.admin',
-        'django.contrib.auth',
-        'django.contrib.contenttypes',
-        'django.contrib.sessions',
-        'django.contrib.messages',
-        'django.contrib.staticfiles',
-        'crispy_forms',
-        'crispy_bootstrap5',
-        'blog',
-        "debug_toolbar",
-        "rest_framework",
-        "rest_framework.authtoken",
-    ]
-
-    MIDDLEWARE = [
-        "debug_toolbar.middleware.DebugToolbarMiddleware",
-        'django.middleware.security.SecurityMiddleware',
-        'django.contrib.sessions.middleware.SessionMiddleware',
-        'django.middleware.common.CommonMiddleware',
-    #   'django.middleware.csrf.CsrfViewMiddleware',
-        'django.contrib.auth.middleware.AuthenticationMiddleware',
-        'django.contrib.messages.middleware.MessageMiddleware',
-    #    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-        
-    ]
-
-    ROOT_URLCONF = 'blango.urls'
-
-    TEMPLATES = [
-        {
-            'BACKEND': 'django.template.backends.django.DjangoTemplates',
-            'DIRS': [BASE_DIR / 'templates'],
-            'APP_DIRS': True,
-            'OPTIONS': {
-                'context_processors': [
-                    'django.template.context_processors.debug',
-                    'django.template.context_processors.request',
-                    'django.contrib.auth.context_processors.auth',
-                    'django.contrib.messages.context_processors.messages',
-                ],
-            },
-        },
-    ]
-
-    WSGI_APPLICATION = 'blango.wsgi.application'
->>>>>>> a90382d38cd4db768ae2601129171384b40ef423
 
 
 class Dev(Configuration):
@@ -154,7 +76,6 @@ class Dev(Configuration):
         "handlers": ["console"],
         "level": "DEBUG",
     },
-<<<<<<< HEAD
   }
 
   # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -310,21 +231,3 @@ class Dev(Configuration):
   
 class Prod(Dev):
     DEBUG = False
-=======
-    }
-
-#### USED for Django Debug Toolbar
-    INTERNAL_IPS = ["192.168.10.93"]
-
-    ### TOken
-    REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework.authentication.BasicAuthentication",
-        "rest_framework.authentication.SessionAuthentication",
-        "rest_framework.authentication.TokenAuthentication",
-    ],
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.IsAuthenticatedOrReadOnly"
-    ],
-    }
->>>>>>> a90382d38cd4db768ae2601129171384b40ef423
