@@ -54,6 +54,7 @@ class Dev(Configuration):
         'blog',
         "debug_toolbar",
         "rest_framework",
+        "rest_framework.authtoken",
     ]
 
     MIDDLEWARE = [
@@ -173,3 +174,12 @@ class Dev(Configuration):
 
 #### USED for Django Debug Toolbar
     INTERNAL_IPS = ["192.168.10.93"]
+
+    ### TOken
+    REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.BasicAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
+    ]
+}
