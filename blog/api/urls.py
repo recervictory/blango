@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.urls import path, include, re_path
 from rest_framework.urlpatterns import format_suffix_patterns
 from rest_framework.authtoken import views
@@ -42,3 +43,24 @@ urlpatterns += [
     path("", include(router.urls)),
 ]
 
+=======
+from django.urls import path
+from rest_framework.urlpatterns import format_suffix_patterns
+
+from blog.api.views import PostList, PostDetail
+from django.urls import path, include
+from rest_framework.authtoken import views
+
+urlpatterns = [
+    path("posts/", PostList.as_view(), name="api_post_list"),
+    path("posts/<int:pk>", PostDetail.as_view(), name="api_post_detail"),
+]
+
+urlpatterns = [
+    path("posts/", PostList.as_view(), name="api_post_list"),
+    path("posts/<int:pk>", PostDetail.as_view(), name="api_post_detail"),
+    path("users/<str:email>", UserDetail.as_view(), name="api_user_detail"),
+]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
+>>>>>>> a90382d38cd4db768ae2601129171384b40ef423

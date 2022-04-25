@@ -6,7 +6,12 @@ from django.contrib.contenttypes.fields import GenericRelation
 
 # Create your models here.
 class Tag(models.Model):
+<<<<<<< HEAD
     value = models.TextField(max_length=100, unique=True)
+=======
+  # Tag contains tag text
+  value = models.TextField(max_length=100, unique=True)
+>>>>>>> a90382d38cd4db768ae2601129171384b40ef423
 
     def __str__(self):
         return self.value
