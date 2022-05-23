@@ -3,7 +3,7 @@ from blog.models import Tag, Post
 
 # Register your models here.
 
-# Register Tag
+# Register Tags
 admin.site.register(Tag)
 
 # Register Post
