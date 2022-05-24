@@ -7,8 +7,8 @@
     <div class="row">
         <div class="col">
             <h3>{{ post.title }}</h3>
-            <!-- author_details filter from-->
-            <small>By {{ post.author|author_details }} on {{ post.published_at|date:"M, d Y" }}</small>
+            <!-- author_details filter from blog_extras colon(:) used request.user as an argument-->
+            <small>By {{ post.author|author_details:request.user }} on {{ post.published_at|date:"M, d Y" }}</small>
             <p>{{ post.summary }}</p>
             <p> 
                 <!-- Pipe(|) used to add filter wordcount and (:) used to add agument to the filter -->
