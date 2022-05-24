@@ -18,6 +18,8 @@ from django.urls import path
 # Render views
 import blog.views
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', blog.views.index),
