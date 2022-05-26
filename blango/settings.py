@@ -57,7 +57,8 @@ class Dev(Configuration):
   # User Installed Apps
       'blog',
       'crispy_forms',
-      'crispy_bootstrap5'
+      'crispy_bootstrap5',
+      "debug_toolbar",
   ]
 
   MIDDLEWARE = [
@@ -68,6 +69,7 @@ class Dev(Configuration):
       'django.contrib.auth.middleware.AuthenticationMiddleware',
       'django.contrib.messages.middleware.MessageMiddleware',
   #    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        "debug_toolbar.middleware.DebugToolbarMiddleware",
   ]
 
   ROOT_URLCONF = 'blango.urls'
@@ -181,6 +183,9 @@ class Dev(Configuration):
       'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
       'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
   ]
+
+  ## --- Internal IP for Django Toolbar
+  INTERNAL_IPS = ["192.168.10.226"]
 
 
 class Prod(Dev):
