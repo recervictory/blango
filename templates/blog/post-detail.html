@@ -18,12 +18,21 @@
 <!-- Inclusion Tag -->
 {% row %}
     {% col %}
-        
         <!-- Template Cache-->
           {% cache 3600 recent_posts post %}
         {% endcache %}
     {% endcol %}
 {% endrow %}
+
+<!-- Author Bio -->
+{% if post.author.profile %}
+    {% row %}
+        {% col %}
+            <h4>About the author</h4>
+            <p>{{ post.author.profile.bio }}</p>
+        {% endcol %}
+    {% endrow %}
+{% endif %}
 
 <!-- Comment from -->
 {% include "blog/post-comments.html" %}
