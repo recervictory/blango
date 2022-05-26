@@ -10,8 +10,12 @@ from blog.forms import CommentForm
 # logging
 import logging
 logger = logging.getLogger(__name__) # name is the module name
+# Cache page
+from django.views.decorators.cache import cache_page
+from django.views.decorators.vary import vary_on_headers
 
-
+@cache_page(300)
+@vary_on_headers('cookie')
 def index(request):
   posts = Post.objects.filter(published_at__lte=timezone.now())
   # Logging
